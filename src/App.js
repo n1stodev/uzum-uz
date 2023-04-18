@@ -5,6 +5,8 @@ import Navbar from './components/navbar/Navbar'
 import Home from './router/home/Home'
 import Cart from './router/cart/Cart'
 import Login from './router/login/Login'
+import Wishlist from './router/wishlist/Wishlist'
+import SingleRoute from './router/single-route/SingleRoute'
 
 function App() {
     return (
@@ -14,6 +16,8 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/login' element={<Login />} />
+                <Route path='/wishlist' element={<Wishlist />} />
+                <Route path='/product/:id' element={<SingleRoute />} />
             </Routes>
             <Footer />
         </div>
