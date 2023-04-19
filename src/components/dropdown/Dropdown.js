@@ -8,15 +8,15 @@ function Dropdown() {
     const state = useSelector(s => s.dropdown)
     return (
         <div className={`dropdown container ${state ? 'active' : 'unactive'}`}>
-            <div className="dropwdown__item">
+            <div className="dropdown__item">
                 <BsHeadset />
                 <span>Elektronika</span>
             </div>
-            <div className="dropwdown__item">
+            <div className="dropdown__item">
                 <FaBlender />
                 <span>Maishiy texnika</span>
             </div>
-            <div className="dropwdown__item">
+            <div className="dropdown__item">
                 <FaTshirt />
                 <span>Kiyimlar</span>
             </div>
