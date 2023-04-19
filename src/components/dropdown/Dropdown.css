@@ -13,12 +13,12 @@
     overflow-y: hidden;
 }
 
-.dropdown.unactive {
+.dropdown.active {
     transition: .4s ease;
     height: auto;
 }
 
-.dropdown.active {
+.dropdown.unactive {
     height: 0;
     padding-top: 0;
     padding-bottom: 0;
