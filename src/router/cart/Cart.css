@@ -162,7 +162,4 @@
     .cart__form {
         margin: auto;
     }
-    .cart__card {
-        flex-direction: column;
-    }
 }

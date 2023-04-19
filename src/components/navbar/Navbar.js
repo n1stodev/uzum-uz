@@ -2,20 +2,25 @@ import React from 'react'
 import './Navbar.css'
 import { FiMenu, FiSearch, FiUser } from 'react-icons/fi'
 import { AiOutlineHeart, AiOutlineShoppingCart, AiOutlineHome } from 'react-icons/ai'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { NAVBAR_BOTTOM_DATA } from '../../static'
+import Dropdown from '../dropdown/Dropdown'
+import { useDispatch } from 'react-redux'
+import { dropdown } from '../../context/action/action'
 
 function Navbar() {
+    const dispatch = useDispatch()
     return (
         <>
             <div className='navbar container'>
-                <NavLink to={'/'} className="nav__logo">
+                <Link to={'/'} className="nav__logo">
                     <span>uzum market</span>
-                </NavLink>
-                <button className="nav__katalog-btn">
+                </Link>
+                <button onClick={() => dispatch(dropdown())} className="nav__katalog-btn">
                     <FiMenu />
                     <span>Katalog</span>
                 </button>
+                <Dropdown />
                 <div className="nav__search">
                     <input type="text" placeholder='Qidirish' />
                     <button>
