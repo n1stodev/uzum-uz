@@ -37,6 +37,7 @@
     padding: 25px 0;
     gap: 25px;
     align-items: center;
+    width: 100%;
 }
 
 .footer__btmText {

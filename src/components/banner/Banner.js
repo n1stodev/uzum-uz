@@ -17,8 +17,8 @@ function Banner() {
                 }}
                 modules={[Navigation, Autoplay, Pagination]}
                 className="mySwiper">
-                <SwiperSlide><img src="https://images.uzum.uz/cghe007g49devoabuk4g/main_page_banner.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img src="https://images.uzum.uz/cgqfulfg49devoadeui0/main_page_banner.jpg" alt="" /></SwiperSlide>
+                <SwiperSlide><img src="https://images.uzum.uz/cghdvrnhj8j9g69b8g3g/main_page_banner.jpg" alt="" /></SwiperSlide>
                 <SwiperSlide><img src="https://images.uzum.uz/cgqmsq7g49devoadh81g/main_page_banner.jpg" alt="" /></SwiperSlide>
             </Swiper>
         </div>
