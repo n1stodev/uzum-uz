@@ -4,7 +4,7 @@ import { AiOutlineHeart, AiOutlineShoppingCart, AiFillHeart } from 'react-icons/
 import { DATA } from '../../static'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { addToHeart, removeFromHeart } from '../../context/action/action'
+import { addToHeart, addToCart, removeFromHeart } from '../../context/action/action'
 
 function Products({ data }) {
     const dispatch = useDispatch()
@@ -23,7 +23,6 @@ function Products({ data }) {
                                     <AiFillHeart onClick={() => dispatch(removeFromHeart(item))} />
                                     :
                                     <AiOutlineHeart onClick={() => dispatch(addToHeart(item))} />
-
                             }
                         </div>
                         <div className="pro__body">
@@ -34,7 +33,7 @@ function Products({ data }) {
                                     <del>{item.price * 1.2} so'm</del>
                                     <p>{item.price} so'm</p>
                                 </div>
-                                <button className='pro__card-shopping'>
+                                <button onClick={() => dispatch(addToCart(item))} className='pro__card-shopping'>
                                     <AiOutlineShoppingCart />
                                 </button>
                             </div>

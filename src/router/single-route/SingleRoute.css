@@ -1,0 +1,152 @@
+.single_route {
+    display: flex;
+    gap: 20px;
+    min-height: 500px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.single-route__images,
+.single-route__content {
+    width: 50%;
+    height: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.single-route__images {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.sr__imagesLeft {
+    width: 120px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.sr__imagesLeft img {
+    width: 100%;
+    height: 32.5%;
+    object-fit: cover;
+}
+
+.sr__imagesLeft img.active {
+    border: 1px solid var(--bg-py);
+}
+
+.sr__imagesRight {
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sr__imagesRight img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sr__contentTitle {
+    font-weight: 500;
+    height: 35px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.sr__contentData {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #777;
+}
+
+.sr__contentData span {
+    color: #000;
+}
+
+.single-route__content hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #ddd;
+    height: 1px;
+    border: none;
+    outline: none;
+}
+
+.sr__contentMiqdor {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.sr__contentPrice {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sr {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.sr h3 {
+    font-weight: 500;
+}
+
+.sr del {
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+}
+
+.sr span {
+    font-size: 12px;
+    font-weight: 500;
+    background: var(--bg-py);
+    color: #fff;
+    border-radius: 3px;
+    padding: 2px 5px;
+}
+
+.sr__contentMiqdor p,
+.sr__contentPrice p {
+    font-size: 15px;
+    display: block;
+}
+
+.sr__btns {
+    margin-top: 15px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sr__btn {
+    padding: 12px 25px;
+    border-radius: 7px;
+    border: none;
+    outline: none;
+    background: var(--bg-py);
+    color: #fff;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 990px) {
+    .single_route {
+        flex-direction: column;
+    }
+    .single-route__content,
+    .single-route__images {
+        width: 100%;
+    }
+}
