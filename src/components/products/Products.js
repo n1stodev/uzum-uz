@@ -1,7 +1,6 @@
 import React from 'react'
 import './Products.css'
 import { AiOutlineHeart, AiOutlineShoppingCart, AiFillHeart } from 'react-icons/ai'
-import { DATA } from '../../static'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToHeart, addToCart, removeFromHeart } from '../../context/action/action'

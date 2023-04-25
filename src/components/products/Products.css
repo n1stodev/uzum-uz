@@ -90,3 +90,7 @@
     color: #888;
     font-size: 12px;
 }
+
+.pro__img svg {
+    color: var(--bg-py);
+}

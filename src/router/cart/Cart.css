@@ -105,6 +105,7 @@
     align-items: flex-start;
     gap: 20px;
     flex: 1;
+    width: 100%;
 }
 
 .cart__card-form h3 {
@@ -194,6 +195,8 @@
     }
     .cart__card-form {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: end;
+        gap: 15px;
+        width: 100%;
     }
 }

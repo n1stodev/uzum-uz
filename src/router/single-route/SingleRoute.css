@@ -141,6 +141,31 @@
     font-weight: 500;
 }
 
+.sr__contentTop {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+
+.sr__contentTop button {
+    padding: 3px 7px;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 16px;
+    background: none;
+}
+
+.sr__contentTop button svg {
+    font-size: 18px;
+}
+
 @media screen and (max-width: 990px) {
     .single_route {
         flex-direction: column;
