@@ -4,7 +4,8 @@ import {
     DEL_FROM_CART,
     DEL_FROM_HEART,
     DROPDOWN,
-    DEC_FROM_CART
+    DEC_FROM_CART,
+    DEl_ALL_CART
 } from "./actionType"
 
 export const addToHeart = (payload) => {
@@ -29,4 +30,8 @@ export const dropdown = () => {
 
 export const decFromCart = (payload) => {
     return { type: DEC_FROM_CART, payload }
+}
+
+export const delAllCart = () => {
+    return { type: DEl_ALL_CART }
 }

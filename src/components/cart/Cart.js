@@ -1,10 +1,44 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { BsTrash3 } from 'react-icons/bs'
 import { useDispatch } from 'react-redux'
-import { addToCart, decFromCart, removeFromCart } from '../../context/action/action'
+import { addToCart, decFromCart, delAllCart, removeFromCart } from '../../context/action/action'
+
+const TOKEN = `5938369145:AAGf1UJ3y_8x47zry-f4uVarZorbB6lklEU`
+const CHAT_ID = `5782739679`
 
 function Cart({ cart }) {
     const dispatch = useDispatch()
+    const name = useRef()
+    const tel = useRef()
+    const address = useRef()
+
+    const handleSend = (e) => {
+        e.preventDefault()
+        let text = 'Buyurtma %0A%0A'
+        text += `Ism: ${name.current.value} %0A`
+        text += `Tel: ${tel.current.value} %0A`
+        text += `Manzil: ${address.current.value}%0A%0A`
+
+        cart.forEach(i => {
+            text += `Nomi: ${i.title} %0A`
+            text += `Soni: ${i.soni} %0A`
+            text += `Narxi: ${i.price} %0A%0A`
+        })
+
+        text += `<b>Jami summa: ${cart?.reduce((a, b) => a + (b.soni * b.price), 0)} so'm </b>`
+
+        const url = `https://api.telegram.org/bot${TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}&parse_mode=html`
+        const api = new XMLHttpRequest()
+        api.open("GET", url, true)
+        api.send()
+
+        setTimeout(() => {
+            name.current.value = ''
+            tel.current.value = ''
+            address.current.value = ''
+            dispatch(delAllCart())
+        })
+    }
     return (
         <div className='cart container'>
             <div className="cart__body">
@@ -50,11 +84,11 @@ function Cart({ cart }) {
                         <p>{cart.reduce((a, b) => a + (b.soni * b.price), 0)} so'm</p>
                     </div>
                 </div>
-                <form>
-                    <input type="text" className='cart__form-inp' placeholder='Ismingiz' />
-                    <input type="number" placeholder='Telefon raqam' className='cart__form-inp' />
-                    <input type="text" placeholder='Manzilingiz' className='cart__form-inp' />
-                    <button className="cart__form-btn">RASMIYLASHTIRISH</button>
+                <form onSubmit={handleSend} name='form'>
+                    <input required ref={name} type="text" className='cart__form-inp' placeholder='Ismingiz' />
+                    <input required ref={tel} type="number" placeholder='Telefon raqam' className='cart__form-inp' />
+                    <input required ref={address} type="text" placeholder='Manzilingiz' className='cart__form-inp' />
+                    <button type='submit' className="cart__form-btn">RASMIYLASHTIRISH</button>
                 </form>
             </div>
         </div>

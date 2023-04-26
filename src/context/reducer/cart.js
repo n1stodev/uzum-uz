@@ -1,4 +1,4 @@
-import { ADD_TO_CART, DEL_FROM_CART, DEC_FROM_CART } from '../action/actionType'
+import { ADD_TO_CART, DEL_FROM_CART, DEC_FROM_CART, DEl_ALL_CART } from '../action/actionType'
 
 const cart = (state = [], action) => {
     let index = state.findIndex(i => i.id === action?.payload?.id)
@@ -11,6 +11,8 @@ const cart = (state = [], action) => {
             }
         case DEC_FROM_CART:
             return state?.map((item, inx) => inx === index ? { ...item, soni: item.soni - 1 } : item)
+        case DEl_ALL_CART:
+            return state = []
         case DEL_FROM_CART:
             return state = state.filter(i => i.id !== action.payload.id)
         default:
