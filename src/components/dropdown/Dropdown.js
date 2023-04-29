@@ -7,7 +7,7 @@ import { FaBlender, FaTshirt } from 'react-icons/fa'
 function Dropdown() {
     const state = useSelector(s => s.dropdown)
     return (
-        <div className={`dropdown container ${state ? 'unactive' : 'active'}`}>
+        <div className={`dropdown container ${state ? 'active' : 'unactive'}`}>
             <div className="dropdown__item">
                 <BsHeadset />
                 <span>Elektronika</span>

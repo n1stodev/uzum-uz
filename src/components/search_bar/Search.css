@@ -1,0 +1,35 @@
+.search_bar {
+    position: fixed;
+    width: 625px;
+    top: 60px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 0px 3px #0002;
+    padding: 10px;
+}
+
+.search_barItem {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    cursor: pointer;
+    padding-left: 5px;
+}
+
+.search_barItem:last-child {
+    border-bottom: none;
+}
+
+.search_barItem:hover {
+    background: #f2f2f2;
+}
+
+@media screen and (max-width: 700px) {
+    .search_bar {
+        width: 100%;
+    }
+}

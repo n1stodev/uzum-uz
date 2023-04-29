@@ -1,7 +1,12 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
+    const { pathname } = useLocation()
+    if (pathname.includes('admin')) {
+        return <></>
+    }
     return (
         <div className='footer container'>
             <div className="footer__top">

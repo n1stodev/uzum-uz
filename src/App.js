@@ -10,6 +10,7 @@ import Wishlist from './router/wishlist/Wishlist'
 import SingleRoute from './router/single-route/SingleRoute'
 
 function App() {
+
     return (
         <div className='App'>
             <Navbar />
@@ -19,7 +20,7 @@ function App() {
                 <Route path='/login' element={<Login />} />
                 <Route path='/wishlist' element={<Wishlist />} />
                 <Route path='/product/:id' element={<SingleRoute />} />
-                <Route path='/admin' element={<Admin />} />
+                <Route path='/admin/*' element={<Admin />} />
             </Routes>
             <Footer />
         </div>

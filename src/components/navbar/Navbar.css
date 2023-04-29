@@ -36,6 +36,7 @@
     flex: 1;
     border: 1px solid #ddd;
     border-radius: 4px;
+    position: relative;
 }
 
 .nav__search input {

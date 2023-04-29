@@ -3,7 +3,7 @@ import './SingleRoute.css'
 import { useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
-import { addToCart, decFromCart, removeFromCart, removeFromHeart, addToHeart } from '../../context/action/action'
+import { addToCart, removeFromHeart, addToHeart } from '../../context/action/action'
 
 function SingleRoute() {
     const dispatch = useDispatch()
@@ -40,18 +40,6 @@ function SingleRoute() {
                 <p className="sr__contentData">Sotuvchi: <span>{'Nurillo Tojiakmedov'}</span></p>
                 <p className="sr__contentData">Yetkazib berish: <span>{'1 kun, bepul'}</span></p>
                 <hr />
-                <div className="sr__contentMiqdor">
-                    <p>Miqdor:</p>
-                    <div className="cart__card-num">
-                        <button
-                            onClick={() => dispatch(addToCart(data))}
-                            className="cart__num-btn">+</button>
-                        <span>{data.soni}</span>
-                        <button
-                            onClick={() => data.soni <= 1 ? dispatch(removeFromCart(data)) : dispatch(decFromCart(data))}
-                            className="cart__num-btn">-</button>
-                    </div>
-                </div>
                 <div className="sr__contentPrice">
                     <p>Narx:</p>
                     <div className='sr'>
@@ -69,7 +57,7 @@ function SingleRoute() {
                     </button>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
